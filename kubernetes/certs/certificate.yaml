@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: kube.dubme.tv-tls
+  namespace: default
+spec:
+  secretName: example-tls-secret
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt-prod
+  commonName: kube.dubme.tv
+  dnsNames:
+  - kube.dubme.tv
+
